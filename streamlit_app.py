@@ -28,3 +28,8 @@ streamlit.header("Fruityvice Fruit Advice!")
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response.json())
+
+# Looks at a python library where there is code to normalize Json files
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# Does this create a table kind of since a 
+streamlit.dataframe(fruityvice_normalized)
